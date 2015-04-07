@@ -8,10 +8,12 @@
     <li>
       <%= gravatar_for user %>
       <%= link_to user.name, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-        | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-      <% end %>
+      <section class="stats">
+        <%= render 'shared/stats', user: user %>
+      </section>
+      <p>
+        <%= pluralize(user.microposts.count, "post") %>
+      </p>
     </li>
   <% end %>
 </ul>
