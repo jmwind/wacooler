@@ -167,6 +167,7 @@ aside {
   }
   section {
     padding: 10px 0;
+    overflow: inherit;
     margin-top: 20px;
     &:first-child {
       border: 0;
@@ -280,8 +281,12 @@ aside {
 
 aside {
   textarea {
-    height: 100px;
+    height: 2em;
     margin-bottom: 5px;
+    resize: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
 }
 
@@ -290,6 +295,25 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.expand {
+    height: 1em;
+    line-height: 1em;
+    /*width: 300px;*/
+    padding: 3px;
+}
+.expanding {
+    position: relative;
+    z-index: 9;
+}
+
+.over {
+  color: red;
+}
+
+.over_background {
+  background-color: rgba(255,0,0,0.5);
 }
 
 /* miscellaneous */

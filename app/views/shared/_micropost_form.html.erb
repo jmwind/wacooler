@@ -1,9 +1,16 @@
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Say something..." %>
+    <%= f.text_area :content, placeholder: "What's happening?" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-md-8">
+      <span>Verbosity score <em id="count"></em></span>
+    </div>
+    <div class="col-md-4">
+      <%= f.submit "Post", class: "btn btn-primary", id: "post_button" %>
+    </div>
+  </div>
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
@@ -15,5 +22,35 @@
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
+  });
+  $('#micropost_content').focus(function () {
+      $(this).addClass("expanding")
+      $(this).animate({
+          height: "6em"
+      }, 500);
+  });
+  $('#micropost_content').blur(function () {
+      $(this).animate({
+          height: "2em"
+      }, 500);
+      $(this).removeClass("expanding")
+  });
+  maxCharacters = 140;
+
+  $('#count').text($('#count').val().length);
+
+  $('#micropost_content').bind('keyup keydown', function() {
+      var count = $('#count');
+      var characters = $(this).val().length;
+      if (characters > maxCharacters) {
+          count.addClass('over');
+          $('#micropost_content').addClass('over_background');
+          $('#post_button').attr('disabled','disabled');
+      } else {
+          count.removeClass('over');
+          $('#micropost_content').removeClass('over_background');
+          $('#post_button').removeAttr('disabled');
+      }
+      count.text($(this).val().length);
   });
 </script>
