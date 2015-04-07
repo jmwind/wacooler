@@ -1,16 +1,20 @@
 == README
 
+This is a toy app that [jmwind](https://twitter.com/jmwind) uses to learn Ruby and Rails. 
+
 == TODOs
 
-- (done) should add autofocus: true to email field in login 
+- (done) should add autofocus: true to email field in login
+- follow/unfollow in users list (refactor follow buttons and logic)
 - add @mentions
+- web sockets for live updates
 - social login (Facebook and Google)
 - add search with elastic search
 - allow multiple nodes (caching?), cdn?
 - setup heroic log aggregation and escalations (pager duty?)
 - hashtags
-- (done)responsive UI for mobile (autosize navbar to icons only)
+- (partly) responsive UI for mobile (autosize navbar to icons only)
 - infinity scroll for posts
-- auto verify length of chatter
+- (done) auto verify length of chatter
 
 <tt>rake doc:app</tt>.
