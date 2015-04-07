@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== TODOs
 
-Things you may want to cover:
+- (done) should add autofocus: true to email field in login 
+- add @mentions
+- social login (Facebook and Google)
+- add search with elastic search
+- allow multiple nodes (caching?), cdn?
+- setup heroic log aggregation and escalations (pager duty?)
+- hashtags
+- (done)responsive UI for mobile (autosize navbar to icons only)
+- infinity scroll for posts
+- auto verify length of chatter
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
