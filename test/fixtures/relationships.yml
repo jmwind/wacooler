@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  follower: alize
+  followed: mallory
+
+two:
+  follower: gabriel
+  followed: mallory
+
+three:
+  follower: lana
+  followed: archer
+
+four:
+  follower: archer
+  followed: gabriel

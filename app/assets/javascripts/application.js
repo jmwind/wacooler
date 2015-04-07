@@ -18,6 +18,9 @@
 
 $(document).ready(function(){
   setTimeout(function(){
-    $('.alert-success').remove();
+    $('.alert-success').stop().fadeTo('slow', 0, function() {
+      $(this).hide()
+      }
+    );
   }, 5000);
  })
