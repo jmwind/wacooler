@@ -5,13 +5,37 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
+User.create!(name:  "Jean-Michel Lemieux",
+             email: "jmwind@gmail.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
+
+ User.create!(name:  "John Duff",
+              email: "john.duff@shopify.com",
+              password:              "foobar",
+              password_confirmation: "foobar",
+              admin: true,
+              activated: true,
+              activated_at: Time.zone.now)
+
+User.create!(name:  "Cody Fauser",
+             email: "cody@shopify.com",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+ User.create!(name:  "Tobi Lutke",
+              email: "tobi@shopify.com",
+              password:              "foobar",
+              password_confirmation: "foobar",
+              admin: true,
+              activated: true,
+              activated_at: Time.zone.now)
 
 # users
 99.times do |n|

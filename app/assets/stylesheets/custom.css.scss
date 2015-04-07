@@ -228,6 +228,11 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .gravatar_edit {
@@ -240,8 +245,14 @@ aside {
   list-style: none;
   padding: 0;
   li {
-    padding: 10px 0;
+    padding: 0 0 0 0;
     border-top: 1px solid #e8e8e8;
+  }
+  .panel-body {
+    padding: 5px;
+  }
+  .panel {
+    margin-bottom: 5px;
   }
   .user {
     margin-top: 5em;
