@@ -30,14 +30,16 @@
       }, 500);
   });
   $('#micropost_content').blur(function () {
-      $(this).animate({
-          height: "2em"
-      }, 500);
-      $(this).removeClass("expanding")
+    if($('#micropost_content').val().length == 0) {
+        $(this).animate({
+            height: "2em"
+        }, 500);
+        $(this).removeClass("expanding")
+      }
   });
   maxCharacters = 140;
 
-  $('#count').text($('#count').val().length);
+  $('#count').text($('#micropost_content').val().length);
 
   $('#micropost_content').bind('keyup keydown', function() {
       var count = $('#count');
