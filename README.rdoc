@@ -5,6 +5,7 @@ This is a toy app that [jmwind](https://twitter.com/jmwind) uses to learn Ruby a
 == TODOs
 
 - (done) should add autofocus: true to email field in login
+- infini scroll posts on home page
 - follow/unfollow in users list (refactor follow buttons and logic)
 - add @mentions
 - web sockets for live updates
