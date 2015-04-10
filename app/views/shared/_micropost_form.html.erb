@@ -1,7 +1,7 @@
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "What's happening?" %>
+    <%= f.text_area :content, placeholder: "What's happening?", class: "mention" %>
   </div>
   <div class="row">
     <div class="col-md-8">
@@ -54,5 +54,6 @@
           $('#post_button').removeAttr('disabled');
       }
       count.text($(this).val().length);
-  });
+  });  
+
 </script>

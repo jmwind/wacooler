@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require underscore
+//= require jquery.mentionsInput.js
 //= require_tree .
 
 $(document).ready(function(){
