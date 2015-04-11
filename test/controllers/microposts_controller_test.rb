@@ -19,4 +19,9 @@ class MicropostsControllerTest < ActionController::TestCase
     end
     assert_redirected_to login_url
   end
+
+  test "should show search page when searching" do
+    get :search, term: 'cats'
+    assert_response :success    
+  end
 end

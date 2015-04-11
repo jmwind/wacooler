@@ -29,4 +29,11 @@ class MicropostTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal Micropost.first, microposts(:most_recent)
   end
+
+  test "search should find text in content" do
+    assert_equal 1, Micropost.search('orange').count
+    assert_equal 2, Micropost.search('cats').count
+    assert_equal 0, Micropost.search('does not exist').count
+    assert_equal Micropost.count, Micropost.search('').count
+  end
 end

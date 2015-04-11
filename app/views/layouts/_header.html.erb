@@ -13,6 +13,11 @@
 
     <div class="collapse navbar-collapse" id="navigationbar">
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search">
+            <input class='search' placeholder='Search Wacooler' name='term' type='text'>
+          </form>
+        </li>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
