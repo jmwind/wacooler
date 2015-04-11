@@ -1,5 +1,5 @@
 <% if @microposts.any? %>
-  <h3>Found <%= @microposts.count %></h3>
+  <h3>Found <%= pluralize(@microposts.count, "post") %></h3>
   <ol class="microposts">
     <%= render @microposts %>
   </ol>
