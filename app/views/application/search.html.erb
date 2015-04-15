@@ -1,0 +1,24 @@
+<% if @users.any? %>
+  <h3>Found <%= pluralize(@users.count, "user") %></h3>
+  <ul class="users">
+    <% @users.each do |user| %>
+      <li>
+        <%= gravatar_for user %>
+        <%= link_to user.name, user %>
+        <section class="stats">
+          <%= render 'shared/stats', user: user %>
+        </section>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @microposts.any? %>
+  <h3>Found <%= pluralize(@microposts.count, "post") %></h3>
+  <ol class="microposts">
+    <%= render @microposts %>
+  </ol>
+  <%= will_paginate @microposts %>
+<% else %>
+  <h3>Nothing found</h3>
+<% end %>

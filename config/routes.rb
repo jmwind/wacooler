@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get    'password_resets/edit'
     get    'sessions/new'
     get    'users/new'
-    get    'search'  => 'microposts#search'
+    get    'search'  => 'application#search'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
     resources :users do

@@ -100,4 +100,11 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "search should match simple names" do
+    assert_equal 1, User.search('alize').count
+    assert_equal 2, User.search('lemieux').count
+    assert_equal 0, User.search('does not exist').count
+    assert_equal User.count, User.search('').count
+  end
+
 end
