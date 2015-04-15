@@ -42,3 +42,20 @@
     </div>
   </div>
 </nav>
+
+<script type="text/javascript">
+  $('.search').focus(function () {
+      $(this).addClass("expanding")
+      $(this).animate({
+          width: "215px"
+      }, 500);
+  });
+  $('.search').blur(function () {
+    if($('.search').val().length == 0) {
+        $(this).animate({
+            width: "57px"
+        }, 500);
+        $(this).removeClass("expanding")
+      }
+  });
+</script>
