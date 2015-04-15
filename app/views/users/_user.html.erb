@@ -1,0 +1,6 @@
+<%= gravatar_for user %>
+<%= link_to user.name, user %>
+(<%= pluralize(user.microposts.count, "post") %>)
+<section class="stats">
+  <%= render 'shared/stats', user: user %>
+</section>
