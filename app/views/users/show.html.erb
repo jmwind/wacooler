@@ -12,7 +12,7 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
+    <%= render 'follow_form', user: @user if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Chatter (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
