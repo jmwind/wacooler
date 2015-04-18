@@ -2,6 +2,7 @@
   <div class="panel-body">
     <%= link_to gravatar_for(micropost.user, 50), micropost.user %>
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+    <span class="handle"><%= link_to "@"+micropost.user.username, micropost.user, class: "handle" %></span>
     <span class="content">
       <%= micropost.content %>
       <%= image_tag micropost.picture.url if micropost.picture? %>
