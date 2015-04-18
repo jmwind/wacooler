@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  before_save :downcase_email
+  before_save :downcase_email, :downcase_username
   before_create :create_activation_digest
 
   scope :search, ->(term) { where('name LIKE ?', "%#{ term }%") }
@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, allow_blank: true
   has_secure_password
+  validates :username, presence: true, length: { maximum: 15 },
+                       uniqueness: { case_sensitive: false }
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -99,6 +101,10 @@ class User < ActiveRecord::Base
       # Converts email to all lower-case.
       def downcase_email
         self.email = email.downcase
+      end
+
+      def downcase_username
+        self.username = username.downcase
       end
 
       def create_activation_digest

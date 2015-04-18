@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(name:  "Jean-Michel Lemieux",
              email: "jmwind@gmail.com",
+             username: "jmwind",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -15,6 +16,7 @@ User.create!(name:  "Jean-Michel Lemieux",
 
  User.create!(name:  "John Duff",
               email: "john.duff@shopify.com",
+              username: "jduff",
               password:              "foobar",
               password_confirmation: "foobar",
               admin: true,
@@ -23,6 +25,7 @@ User.create!(name:  "Jean-Michel Lemieux",
 
 User.create!(name:  "Cody Fauser",
              email: "cody@shopify.com",
+             username: "cody",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -31,6 +34,7 @@ User.create!(name:  "Cody Fauser",
 
  User.create!(name:  "Tobi Lutke",
               email: "tobi@shopify.com",
+              username: "tobi",
               password:              "foobar",
               password_confirmation: "foobar",
               admin: true,
@@ -40,10 +44,12 @@ User.create!(name:  "Cody Fauser",
 # users
 99.times do |n|
   name  = Faker::Name.name
+  username = name[0..15].gsub(/\s+/, "").downcase
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name:  name,
                email: email,
+               username: username,
                password:              password,
                password_confirmation: password,
                admin: false,
