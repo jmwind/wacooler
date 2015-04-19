@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   before_save :downcase_email, :downcase_username
   before_create :create_activation_digest
 
-  scope :search, ->(term) { where('name LIKE ?', "%#{ term }%") }
+  scope :search, ->(term) { where('name LIKE :term OR username LIKE :term', {term:"%#{ term }%"}) }
 
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -94,6 +94,10 @@ class User < ActiveRecord::Base
   # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  def username_handle
+    "@" + username
   end
 
   private
