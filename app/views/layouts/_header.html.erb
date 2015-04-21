@@ -13,11 +13,13 @@
 
     <div class="collapse navbar-collapse" id="navigationbar">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <form action="/search">
-            <input class='search' placeholder='Search Wacooler' name='term' type='text'>
-          </form>
-        </li>
+        <% if logged_in? %>
+          <li>
+            <form action="/search">
+              <input class='search' placeholder='Search' name='term' type='text'>
+            </form>
+          </li>
+        <% end %>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
@@ -47,7 +49,7 @@
   $('.search').focus(function () {
       $(this).addClass("expanding")
       $(this).animate({
-          width: "215px"
+          width: "205px"
       }, 500);
   });
   $('.search').blur(function () {
