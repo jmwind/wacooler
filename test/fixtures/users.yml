@@ -3,7 +3,7 @@
 alize:
   name: Alize Lemieux
   email: alize@lemieux.com
-  username: alize
+  username: alemieux
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
@@ -12,7 +12,7 @@ alize:
 gabriel:
   name: Gabriel Lemieux
   email: gabriel@lemieux.com
-  username: gabriel
+  username: gablem
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>

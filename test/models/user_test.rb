@@ -128,4 +128,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal User.count, User.search('').count
   end
 
+  test "search should match usernames" do
+    assert_equal 1, User.search('alemieux').count
+    assert_equal 1, User.search('gablem').count
+  end
+
 end

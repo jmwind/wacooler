@@ -11,13 +11,14 @@ This is a toy app that [jmwind](https://twitter.com/jmwind) uses to learn Ruby a
 - allow multiple nodes (caching?)
 - setup heroic log aggregation and escalations (pager duty?)
 - hashtag support
-- should there be more loggin to help troubleshoot?
+- should there be more logging to help troubleshoot?
 - infinity scroll for posts
 - allow assets to be delivered via CDN (images from S3 and Rails assets)
 - refactor the UI into components (posts, buttons, users)
 - build the front-end in React
 - shorten links in post text area and on post creation
 
+- (done) add usernames to support mentions
 - (done) follow/unfollow in users list (refactor follow buttons and logic)
 - (done) add autofocus in all forms: true to email field in login
 - (partly) responsive UI for mobile (autosize navbar to icons only)
