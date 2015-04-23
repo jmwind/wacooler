@@ -17,13 +17,18 @@ class User < ActiveRecord::Base
   scope :search, ->(term) { where('name LIKE :term OR username LIKE :term', {term:"%#{ term }%"}) }
 
   validates :name,  presence: true, length: { maximum: 50 }
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
   validates :password, length: { minimum: 6 }, allow_blank: true
   has_secure_password
+
+  VALID_USERNAME_REGEX = /\A[-\w]+\Z/i
   validates :username, presence: true, length: { maximum: 15 },
+                       format: { with: VALID_USERNAME_REGEX, message: "cannot contain spaces" },
                        uniqueness: { case_sensitive: false }
 
   # Returns the hash digest of the given string.

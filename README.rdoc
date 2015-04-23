@@ -9,6 +9,7 @@ This is a toy app that [jmwind](https://twitter.com/jmwind) uses to learn Ruby a
 - social login (Facebook and Google)
 - add full text search with elastic search or other
 - allow multiple nodes (caching?)
+- refactor feed to be a separate table for performance and no joins
 - setup heroic log aggregation and escalations (pager duty?)
 - hashtag support
 - should there be more logging to help troubleshoot?
