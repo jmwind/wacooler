@@ -4,7 +4,7 @@
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
     <span class="handle"><%= link_to "@"+micropost.user.username, micropost.user, class: "handle" %></span>
     <span class="content">
-      <%= micropost.content %>
+      <%= micropost.content.gsub("\n","<br>").html_safe %>
       <%= image_tag micropost.picture.url if micropost.picture? %>
     </span>
     <span class="timestamp">
