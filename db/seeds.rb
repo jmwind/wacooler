@@ -44,7 +44,7 @@ User.create!(name:  "Cody Fauser",
 # users
 99.times do |n|
   name  = Faker::Name.name
-  username = name[0..15].gsub(/\s+/, "").downcase
+  username = "#{n+1}"
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name:  name,
