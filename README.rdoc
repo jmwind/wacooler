@@ -21,12 +21,14 @@ This is a toy app that [jmwind](https://twitter.com/jmwind) uses to learn Ruby a
 - build the front-end in React
 - shorten links in post text area and on post creation
 
+
+- (done) remove page refresh when adding a post and the stupid flash message
 - (done) refactor the UI into components (posts, buttons, users)
 - (done) add usernames to support mentions
 - (done) follow/unfollow in users list (refactor follow buttons and logic)
 - (done) add autofocus in all forms: true to email field in login
 - (partly) responsive UI for mobile (autosize navbar to icons only)
 - (done) auto verify length of chatter
-- (done) add global db level search for posts and users
+- (done) add global db level search for posts and users and show results on one page
 
 <tt>rake doc:app</tt>.
