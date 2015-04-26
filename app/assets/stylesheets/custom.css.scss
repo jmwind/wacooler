@@ -15,6 +15,11 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  margin: 0;
+  background: url('/wacooler_bkg.png');
+  background-size: 100%;
+  background-repeat: repeat;
+  display: compact;
 }
 
 section {
@@ -25,11 +30,22 @@ textarea {
   resize: vertical;
 }
 
+.col-md-8 {
+  width: 56.666667%;
+}
+
 .center {
   text-align: center;
+  vertical-align: center;
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.hero {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .handle {
@@ -76,13 +92,12 @@ img {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: black;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
     text-decoration: none;
   }
 }
@@ -94,6 +109,11 @@ img {
     border-radius: 15px;
     padding-left: 6px;
     width: 80px;
+}
+
+.navbar {
+  background-color: #FEFFFE;
+  border-color: #020303;
 }
 
 /* footer */
@@ -178,11 +198,15 @@ input {
   margin-left: 0;
 }
 
+.panel-box {
+  padding: 6px;
+}
+
 /* sidebar */
 
 aside {
   section.user_info {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   section {
     padding: 10px 0;
@@ -209,11 +233,12 @@ aside {
 
 .stats {
   overflow: auto;
-  margin-top: 0;
+  margin-top: 5px;
   padding: 0;
   a {
     float: left;
     padding: 0 10px;
+    font-size: 12px;
     border-left: 1px solid $gray-lighter;
     color: gray;
     &:first-child {

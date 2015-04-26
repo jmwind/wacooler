@@ -1,15 +1,21 @@
 <div class="stats">
+  <a href="">
+    CHATTERS
+    <strong id="posts_<%= user.id %>" class="stat">
+      <%= user.microposts.count %>
+    </strong>
+  </a>
   <a href="<%= following_user_path(user) %>">
+    FOLLOWING
     <strong id="following_<%= user.id %>" class="stat">
       <%= user.following.count %>
     </strong>
-    following
   </a>
   <a href="<%= followers_user_path(user) %>">
+    FOLLOWERS
     <strong id="followers_<%= user.id %>" class="stat">
       <%= user.followers.count %>
     </strong>
-    followers
   </a>
   <div>
   <%= render 'shared/follow_form', user: user %>

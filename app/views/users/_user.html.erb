@@ -1,3 +1,4 @@
+<div class="panel panel-box">
 <%= gravatar_for user %>
 <%= link_to user.name, user %>
 <%= link_to user.username_handle, user, class: "handle" %>
@@ -5,3 +6,4 @@
 <section class="stats">
   <%= render 'shared/stats', user: user %>
 </section>
+</div>

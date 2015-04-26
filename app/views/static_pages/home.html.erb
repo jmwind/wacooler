@@ -2,30 +2,31 @@
   <% @user ||= current_user %>
   <div class="row">
     <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
+      <section class="user_info panel panel-box">
+        <div  class="panel-box">
+          <%= render 'shared/user_info' %>
+          <%= render 'shared/stats', user: @user %>
+        </div>
       </section>
-      <section class="stats">
-        <%= render 'shared/stats', user: @user %>
-      </section>
-      <section class="micropost_form">
+      <section class="micropost_form panel panel-box">
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>Chatter</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
+
 <div class="center jumbotron">
-  <h1>Welcome to your Water Cooler</h1>
+
+  <h1>Your Water Cooler</h1>
 
   <h2>
-    This is where you can stay in touch with the latest office gossip without leaving your pyjamas.
+    Stay in touch with the latest office gossip without leaving your pyjamas.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> or <%= link_to "Log in", login_path %>
 </div>
 
 <% end %>
